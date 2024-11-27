@@ -562,7 +562,7 @@ public class Entity implements Viewable, Tickable, Schedulable, Snapshotable, Ev
             effectTick();
         }
         // Scheduled synchronization
-        if (vehicle == null && ticks >= nextSynchronizationTick) {
+        if (vehicle == null && ticks >= nextSynchronizationTick && entityType != EntityType.BOAT) {
             synchronizePosition();
             sendPacketToViewers(getVelocityPacket());
         }
